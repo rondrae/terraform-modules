@@ -14,6 +14,6 @@ variable "image_in" {
 variable "name_in" {
   
 }
-variable "host_path_in" {
+# variable "host_path_in" {
   
-}
+# }
