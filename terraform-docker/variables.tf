@@ -20,14 +20,14 @@ variable "ext_port" {
   #sensitive = true
   
 
-  validation {
-    condition = max(var.ext_port["dev"]...) <= 65535 && min(var.ext_port["dev"]...) >= 1980
-    error_message = "Port should be 1 - 65535. "
-  }
-  validation {
-    condition = max(var.ext_port["prod"]...) < 1980 && min(var.ext_port["prod"]...) >= 1880
-    error_message = "Port should be 1 - 65535. "
-  }
+  # validation {
+  #   condition = max(var.ext_port["dev"]...) <= 65535 && min(var.ext_port["dev"]...) >= 1980
+  #   error_message = "Port should be 1 - 65535. "
+  # }
+  # validation {
+  #   condition = max(var.ext_port["prod"]...) < 1980 && min(var.ext_port["prod"]...) >= 1880
+  #   error_message = "Port should be 1 - 65535. "
+  # }
 
 }  
 
@@ -41,9 +41,9 @@ variable "int_port" {
 
 }
 
-locals {
-  container_count = length(var.ext_port[terraform.workspace])
-}
+# locals {
+#   container_count = length(var.ext_port[terraform.workspace])
+# }
 # variable "container_count" {
 #   type = number
 #   default = 3
