@@ -1,4 +1,13 @@
-
+locals {
+  deployment = {
+    nodered = {
+      image = var.image["nodered"][terraform.workspace]
+    }
+    influxdb = {
+      image = var.image["influxdb"][terraform.workspace]
+    } 
+  }
+}
 
 
 module "nodered_image" {
