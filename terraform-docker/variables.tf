@@ -42,7 +42,7 @@ variable "int_port" {
 }
 
 # locals {
-#   container_count = length(var.ext_port[terraform.workspace])
+#          
 # }
 # variable "container_count" {
 #   type = number
