@@ -12,3 +12,8 @@
 # # # #   value = join(":", [docker_container.nodered_container[1].network_data[0].ip_address, docker_container.nodered_container[1].ports[0].external])
 # # # #   description = "THe IP of the container"
 # # # # }
+
+output "application_access"{
+    value = module.container
+    description = "The name of socket for each application"
+}

@@ -13,3 +13,7 @@
 # #   value = join(":", [docker_container.nodered_container[1].network_data[0].ip_address, docker_container.nodered_container[1].ports[0].external])
 # #   description = "THe IP of the container"
 # # }
+
+output "application_access" {
+    value = {for x in docker_container.app_container[*]: x.name => join(":", [x.network_data[0].ip_address], x.ports[*]["external"]) }
+}
